@@ -1,9 +1,5 @@
 defmodule ThreeSidesSquare do
-  def load(file) do
+  def is_triangle_valid({d1, d2, d3}) do
+    d2 + d3 < d1 or d3 + d1 < d2 or d1 + d2 < d3
   end
-
-  def read_line(line) do
-  end
-
-  def is_triangle_valid({d1, d2, d3}), do: d3 > d1 + d2
 end
