@@ -8,6 +8,9 @@ defmodule ThreeSidesSquareTest do
 
     valid = {30, 10, 10}
     assert ThreeSidesSquare.is_triangle_valid(valid)
+
+    valid = {10, 30, 10}
+    assert ThreeSidesSquare.is_triangle_valid(valid)
   end
 
   test "is_triangle_valid with non valid triangle" do
