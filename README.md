@@ -5,7 +5,7 @@ Day 3 exercice from http://adventofcode.com/2016/day/3.
 ## Usage
 
 ```
-ThreeSidesSquare.count_valid_triangle("input_test.txt")
+ThreeSidesSquare.count_valid_triangles("input_test.txt")
 ```
 
 ## Installation

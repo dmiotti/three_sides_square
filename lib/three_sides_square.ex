@@ -3,12 +3,8 @@ defmodule ThreeSidesSquare do
   def count_valid_triangles(file_name) do
     read_file(file_name)
     |> Enum.map(fn x -> read_line(x) end)
-    |> Enum.filter(fn x -> tuple_size(x) > 0 end)
+    |> transpose()
     |> Enum.count(fn x -> is_triangle_valid(x) end)
-  end
-
-  def transpose(array) do
-    List.zip(array) |> Enum.map(&Tuple.to_list(&1))
   end
 
   def read_file(file_name) do
@@ -22,6 +18,14 @@ defmodule ThreeSidesSquare do
     |> String.split(~r/\W/, trim: true)
     |> Enum.map(fn x -> String.to_integer(x) end)
     |> List.to_tuple
+  end
+
+  def transpose([a, b, c | rest]) do
+    if length(rest) >= 3 do
+      List.zip([a, b, c]) ++ transpose(rest)
+    else
+      List.zip([a, b, c])
+    end
   end
 
   def is_triangle_valid({d1, d2, d3}) do
